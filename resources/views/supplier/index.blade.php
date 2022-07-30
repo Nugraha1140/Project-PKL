@@ -7,8 +7,8 @@
                 @include('layouts/flash')
                 <div class="card">
                     <div class="card-header">
-                        Data Barang
-                        <a href="{{ route('barang.create') }}" class="btn btn-sm btn-primary" style="float: right">
+                        Data Supplier
+                        <a href="{{ route('supplier.create') }}" class="btn btn-sm btn-primary" style="float: right">
                             Tambah Data
                         </a>
                     </div>
@@ -18,34 +18,30 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>Nama Supplier</th>
+                                        <th>Jumlah</th>
                                         <th>Nama Barang</th>
-                                        <th>Harga</th>
-                                        <th>Stok</th>
-                                        <th>Foto</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @php $no = 1; @endphp
-                                    @foreach ($barang as $data)
+                                    @foreach ($supplier as $data)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $data->nama_baju }}</td>
-                                            <td>Rp. {{ number_format($data->harga, 0, ',', '.') }}</td>
-                                            <td>{{ $data->stok }}</td>
+                                            <td>{{ $data->nama_supplier }}</td>
+                                            <td>{{ $data->jumlah }}</td>
+                                            <td>{{ $data->barang->nama_baju }}</td>
+                                           
                                             <td>
-                                                <img src="{{ $data->image() }}" style="width: 100px; height:100px;"
-                                                    alt="">
-                                            </td>
-                                            <td>
-                                                <form action="{{ route('barang.destroy', $data->id) }}" method="post">
+                                                <form action="{{ route('supplier.destroy', $data->id) }}" method="post">
                                                     @csrf
                                                     @method('delete')
-                                                    <a href="{{ route('barang.edit', $data->id) }}"
+                                                    <a href="{{ route('supplier.edit', $data->id) }}"
                                                         class="btn btn-sm btn-outline-success">
                                                         Edit
                                                     </a> |
-                                                    <a href="{{ route('barang.show', $data->id) }}"
+                                                    <a href="{{ route('supplier.show', $data->id) }}"
                                                         class="btn btn-sm btn-outline-warning">
                                                         Show
                                                     </a> |

@@ -1,5 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\SupplierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,15 +22,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
-//     Route::get('/', function () {
-//         return view('admin.index');
-//     });
-//     Route::resource('barang', BarangController::class);
-// });
-// route admin
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
     Route::get('/', function () {
         return view('admin.index');
     });
-});
+    Route::resource('barang', BarangController::class);
+    Route::resource('supplier', SupplierController::class);
+    });
+

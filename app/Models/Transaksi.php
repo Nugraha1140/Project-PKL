@@ -15,4 +15,8 @@ class Transaksi extends Model
     {
         return $this->hasMany(Transaksi::class, 'id_costumer');
     }
+    public function barang()
+    {
+        return $this->hasMany(Barang::class, 'id_barang');
+    }
 }

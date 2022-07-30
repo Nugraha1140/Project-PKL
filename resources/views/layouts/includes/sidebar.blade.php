@@ -55,20 +55,20 @@
                        </a>
                    </li>
                    <li class="nav-item">
-                       <a href="/admin/beli" class="nav-link">
+                       <a href="/admin/supplier" class="nav-link">
                            <i class="nav-icon fas fa-copy"></i>
                            <p>
-                               Pembelian
+                               Supplier
                                <span class="right badge badge-danger"></span>
                            </p>
                        </a>
 
                    </li>
                    <li class="nav-item">
-                       <a href="/admin/wali" class="nav-link">
+                       <a href="/admin/costumer" class="nav-link">
                            <i class="nav-icon fas fa-chart-pie"></i>
                            <p>
-                               Wali
+                              Costumer
 
                            </p>
                        </a>
@@ -77,11 +77,11 @@
                        <a href="/admin/guru" class="nav-link ">
                            <i class="nav-icon fas fa-tree"></i>
                            <p>
-                               Guru
+                               Data Transaksi
                            </p>
                        </a>
                    </li>
-                   <li class="nav-item">
+                   {{-- <li class="nav-item">
                        <a href="#" class="nav-link">
                            <i class="nav-icon fas fa-edit"></i>
                            <p>
@@ -517,7 +517,7 @@
                    <li class="nav-item">
                        <a href="#" class="nav-link">
                            <i class="nav-icon far fa-circle text-info"></i>
-                           <p>Informational</p>
+                           <p>Informational</p> --}}
                        </a>
                    </li>
                </ul>

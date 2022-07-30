@@ -42,10 +42,12 @@ class BarangController extends Controller
             'nama_baju' => 'required',
             'harga' => 'required',
             'stok' => 'required',
-            'foto' => 'required|image|max:2048',
+            'foto' => 'required',
         ]);
         $barang = new Barang();
         $barang->nama_baju = $request->nama_baju;
+        $barang->harga = $request->harga;
+        $barang->stok = $request->stok;
         if ($request->hasFile('foto')) {
             $image = $request->file('foto');
             $name = rand(1000, 9999) . $image->getClientOriginalName();
@@ -97,10 +99,12 @@ class BarangController extends Controller
             'nama_baju' => 'required',
             'harga' => 'required',
             'stok' => 'required',
-            'foto' => 'required|image|max:2048',
+            'foto' => 'required',
         ]);
         $barang = Barang::findOrFail($id);
         $barang->nama_baju = $request->nama_baju;
+        $barang->harga = $request->harga;
+        $barang->stok = $request->stok;
         if ($request->hasFile('foto')) {
             $image = $request->file('foto');
             $name = rand(1000, 9999) . $image->getClientOriginalName();

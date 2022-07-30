@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Barang;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 
 class SupplierController extends Controller
@@ -13,7 +14,9 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        //
+        $supplier = Supplier::with('barang')->get();
+        return view('supplier.index', ['supplier' => $supplier
+    ]);
     }
 
     /**
@@ -23,7 +26,8 @@ class SupplierController extends Controller
      */
     public function create()
     {
-        //
+        $barang = Barang::all();
+        return view('supplier.create', compact('barang'));
     }
 
     /**
@@ -34,7 +38,22 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validasi
+        $validated = $request->validate([
+
+            'nama_supplier' => 'required',
+            'jumlah' => 'required',
+            'id_barang' => 'required',
+        ]);
+
+        $supplier = new Supplier();
+        $supplier->nama_supplier = $request->nama_supplier;
+        $supplier->jumlah = $request->jumlah;
+        $supplier->id_barang = $request->id_barang;
+        $supplier->save();
+        return redirect()->route('supplier.index')
+            ->with('success', 'Data berhasil dibuat!');
+
     }
 
     /**
@@ -45,7 +64,10 @@ class SupplierController extends Controller
      */
     public function show($id)
     {
-        //
+        $supplier = Supplier::findOrFail($id);
+
+        return view('supplier.show', compact('supplier'));
+
     }
 
     /**
@@ -56,7 +78,9 @@ class SupplierController extends Controller
      */
     public function edit($id)
     {
-        //
+        $supplier = Supplier::findOrFail($id);
+        $barang = Barang::all();
+        return view('supplier.edit', compact('supplier','barang'));
     }
 
     /**
@@ -68,7 +92,21 @@ class SupplierController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+
+            'nama_supplier' => 'required',
+            'jumlah' => 'required',
+            'id_barang' => 'required',
+        ]);
+
+        $supplier = Supplier::findOrFail($id);;
+        $supplier->nama_supplier = $request->nama_supplier;
+        $supplier->jumlah = $request->jumlah;
+        $supplier->id_barang = $request->id_barang;
+        $supplier->save();
+        return redirect()->route('supplier.index')
+            ->with('success', 'Data berhasil dibuat!');
+
     }
 
     /**
@@ -79,6 +117,10 @@ class SupplierController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $supplier = Supplier::findOrFail($id);
+        $supplier->delete();
+        return redirect()->route('supplier.index')
+            ->with('success', 'Data berhasil dihapus!');
+
     }
 }
