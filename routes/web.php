@@ -1,7 +1,9 @@
 <?php
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\CostumerController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\TransaksiController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +30,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
     });
     Route::resource('barang', BarangController::class);
     Route::resource('supplier', SupplierController::class);
-    });
-
+    Route::resource('costumer', CostumerController::class);
+    Route::resource('transaksi', TransaksiController::class);
+});

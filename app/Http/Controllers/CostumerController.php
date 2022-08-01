@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Costumer;
 use Illuminate\Http\Request;
 
 class CostumerController extends Controller
@@ -13,7 +14,9 @@ class CostumerController extends Controller
      */
     public function index()
     {
-        //
+        $costumer = Costumer::all();
+        return view('costumer.index', compact('costumer'));
+
     }
 
     /**

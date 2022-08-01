@@ -1,10 +1,10 @@
    <aside class="main-sidebar sidebar-dark-primary elevation-4">
        <!-- Brand Logo -->
-       <a href="index3.html" class="brand-link">
+       {{-- <a href="index3.html" class="brand-link">
            <img src="{{ asset('assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                class="brand-image img-circle elevation-3" style="opacity: .8">
            <span class="brand-text font-weight-light">AdminLTE 3</span>
-       </a>
+       </a> --}}
 
        <!-- Sidebar -->
        <div class="sidebar">
@@ -68,24 +68,24 @@
                        <a href="/admin/costumer" class="nav-link">
                            <i class="nav-icon fas fa-chart-pie"></i>
                            <p>
-                              Costumer
+                               Costumer
 
                            </p>
                        </a>
                    </li>
                    <li class="nav-item">
-                       <a href="/admin/guru" class="nav-link ">
+                       <a href="/admin/transaksi" class="nav-link ">
                            <i class="nav-icon fas fa-tree"></i>
                            <p>
                                Data Transaksi
                            </p>
                        </a>
                    </li>
-                   {{-- <li class="nav-item">
-                       <a href="#" class="nav-link">
+                   <li class="nav-item">
+                       <a href="/admin/akun" class="nav-link">
                            <i class="nav-icon fas fa-edit"></i>
                            <p>
-                               Forms
+                               Akun
                                <i class="fas fa-angle-left right"></i>
                            </p>
                        </a>
@@ -93,30 +93,24 @@
                            <li class="nav-item">
                                <a href="pages/forms/general.html" class="nav-link">
                                    <i class="far fa-circle nav-icon"></i>
-                                   <p>General Elements</p>
+                                   <p>Profil</p>
                                </a>
                            </li>
                            <li class="nav-item">
                                <a href="pages/forms/advanced.html" class="nav-link">
                                    <i class="far fa-circle nav-icon"></i>
-                                   <p>Advanced Elements</p>
+                                   <p>Data Akun</p>
                                </a>
                            </li>
                            <li class="nav-item">
                                <a href="pages/forms/editors.html" class="nav-link">
                                    <i class="far fa-circle nav-icon"></i>
-                                   <p>Editors</p>
-                               </a>
-                           </li>
-                           <li class="nav-item">
-                               <a href="pages/forms/validation.html" class="nav-link">
-                                   <i class="far fa-circle nav-icon"></i>
-                                   <p>Validation</p>
+                                   <p>Logout</p>
                                </a>
                            </li>
                        </ul>
-                   </li>
-                   <li class="nav-item">
+
+                       {{-- <li class="nav-item">
                        <a href="#" class="nav-link">
                            <i class="nav-icon fas fa-table"></i>
                            <p>
@@ -519,7 +513,7 @@
                            <i class="nav-icon far fa-circle text-info"></i>
                            <p>Informational</p> --}}
                        </a>
-                   </li>
+                   </li> --}}
                </ul>
            </nav>
            <!-- /.sidebar-menu -->
