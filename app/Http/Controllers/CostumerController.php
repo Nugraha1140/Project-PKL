@@ -48,7 +48,10 @@ class CostumerController extends Controller
      */
     public function show($id)
     {
-        //
+        $costumer = Costumer::findOrFail($id);
+
+        return view('costumer.show', compact('costumer'));
+
     }
 
     /**
@@ -82,6 +85,10 @@ class CostumerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $costumer = Costumer::findOrFail($id);
+        $costumer->delete();
+        return redirect()->route('costumer.index')
+            ->with('success', 'Data berhasil dihapus!');
+
     }
 }

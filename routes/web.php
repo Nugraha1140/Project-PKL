@@ -33,3 +33,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
     Route::resource('costumer', CostumerController::class);
     Route::resource('transaksi', TransaksiController::class);
 });
+
+Route::get('/test', function () {
+    return view('layouts.user');
+});

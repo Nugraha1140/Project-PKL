@@ -13,10 +13,10 @@ class Transaksi extends Model
 
     public function transaksi()
     {
-        return $this->hasMany(Transaksi::class, 'id_costumer');
+        return $this->belongsTo(Transaksi::class, 'id_costumer');
     }
     public function barang()
     {
-        return $this->hasMany(Barang::class, 'id_barang');
+        return $this->belongsTo(Barang::class, 'id_barang');
     }
 }
