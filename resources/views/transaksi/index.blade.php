@@ -20,10 +20,13 @@
                                         <th>No</th>
                                         <th>Nama Costumer</th>
                                         <th>Nama Barang</th>
+                                        <th>Harga</th>
                                         <th>Jumlah Barang</th>
                                         <th>Total</th>
                                         <th>Tanggal Transaksi</th>
                                         <th>Aksi</th>
+                                        <th></th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -33,11 +36,11 @@
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $data->costumer->nama_costumer }}</td>
                                             <td>{{ $data->barang->nama_baju }}</td>
+                                            <td>{{ number_format($data->barang->harga, 0, ',', '.') }}</td>
                                             <td>{{ $data->jumlah }}</td>
-                                            <td>{{ $data->total }}</td>
-                                            <td>{{ $data->tgl_transaksi }}</td>
+                                            <td>{{ number_format($data->total, 0, ',', '.') }}</td>
+                                            <td>{{ date('d M Y', strtotime($data->tgl_transaksi)) }}</td>
                                             <td>{{ $data->aksi }}</td>
-
                                             <td>
                                                 <form action="{{ route('transaksi.destroy', $data->id) }}" method="post">
                                                     @csrf

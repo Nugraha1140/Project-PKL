@@ -37,7 +37,22 @@ class CostumerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+
+            'nama_costumer' => 'required',
+            'jk' => 'required',
+            'no_telpon' => 'required',
+            'alamat' => 'required',
+        ]);
+
+        $costumer = new Costumer();
+        $costumer->nama_costumer = $request->nama_costumer;
+        $costumer->jk = $request->jk;
+        $costumer->no_telpon = $request->no_telpon;
+        $costumer->alamat = $request->alamat;
+        $costumer->save();
+        return redirect()->route('costumer.index')
+            ->with('success', 'Data berhasil dibuat!');
     }
 
     /**
@@ -74,7 +89,22 @@ class CostumerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+
+            'nama_costumer' => 'required',
+            'jk' => 'required',
+            'no_telpon' => 'required',
+            'alamat' => 'required',
+        ]);
+
+        $costumer = Costumer::findOrFail($id);
+        $costumer->nama_costumer = $request->nama_costumer;
+        $costumer->jk = $request->jk;
+        $costumer->no_telpon = $request->no_telpon;
+        $costumer->alamat = $request->alamat;
+        $costumer->save();
+        return redirect()->route('costumer.index')
+            ->with('success', 'Data berhasil dibuat!');
     }
 
     /**

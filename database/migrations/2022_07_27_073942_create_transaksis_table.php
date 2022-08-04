@@ -19,6 +19,7 @@ class CreateTransaksisTable extends Migration
             $table->foreign('id_costumer')->references('id')->on('costumers')->onDelete('CASCADE');
             $table->unsignedBigInteger('id_barang');
             $table->foreign('id_barang')->references('id')->on('barangs')->onDelete('CASCADE');
+            $table->integer('harga');
             $table->integer('jumlah');
             $table->integer('total');
             $table->date('tgl_transaksi');

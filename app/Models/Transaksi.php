@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Transaksi extends Model
 {
     use HasFactory;
-    public $fillable = ['id_costumer', 'id_barang', 'jumlah', 'total', 'tgl_transaksi'];
+    public $fillable = ['id_costumer', 'id_barang','harga', 'jumlah', 'tgl_transaksi'];
     public $timestamp = true;
 
-    public function transaksi()
+    public function costumer()
     {
-        return $this->belongsTo(Transaksi::class, 'id_costumer');
+        return $this->belongsTo(Costumer::class, 'id_costumer');
     }
     public function barang()
     {

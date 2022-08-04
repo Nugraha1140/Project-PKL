@@ -3,20 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaksi;
+use App\Models\Barang;
+use App\Models\Costumer;
 use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
 {
+  
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->Transaksi = new Transaksi();
+    }
     public function index()
     {
-        $transaksi = Transaksi::with('costumer', 'barang')->get();
-        return view('transaksi.index', ['transaksi' => $transaksi,
-        ]);
+        $transaksi = Transaksi::with('costumer','barang')->get();
+        return view('transaksi.index', ['transaksi' => $transaksi]);
     }
 
     /**
@@ -26,7 +32,7 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        //
+        return view('transaksi.create');
     }
 
     /**
@@ -37,7 +43,27 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+
+            'id_costumer' => 'required',
+            'id_barang' => 'required',
+            'harga' => 'required',
+            'jumlah' => 'required',
+            'total' => 'required',
+            'tgl_transaksi' => 'required',
+        ]);
+
+        $transaksi = new Transaksi();
+        $transaksi->id_costumer = $request->id_costumer;
+        $transaksi->id_barang = $request->id_barang;
+        $transaksi->harga = $request->harga;
+        $transaksi->jumlah = $request->jumlah;
+        $transaksi->total = $request->jumlah * $request->harga;
+        $transaksi->tgl_transaksi = $request->tgl_transaksi;
+        $transaksi->save();
+        return redirect()->route('transaksi.index')
+            ->with('success', 'Data berhasil dibuat!');
+
     }
 
     /**
@@ -71,7 +97,27 @@ class TransaksiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+
+            'id_costumer' => 'required',
+            'id_barang' => 'required',
+            'harga' => 'required',
+            'jumlah' => 'required',
+            'total' => 'required',
+            'tgl_transaksi' => 'required',
+        ]);
+
+        $transaksi = Transaksi::findOrFail($id);
+        $transaksi->id_costumer = $request->id_costumer;
+        $transaksi->id_barang = $request->id_barang;
+        $transaksi->harga = $request->harga;
+        $transaksi->jumlah = $request->jumlah;
+        $transaksi->total = $request->jumlah * $request->harga;
+        $transaksi->tgl_transaksi = $request->tgl_transaksi;
+        $transaksi->save();
+        return redirect()->route('transaksi.index')
+            ->with('success', 'Data berhasil dibuat!');
+
     }
 
     /**
@@ -82,6 +128,10 @@ class TransaksiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $transaksi = Transaksi::findOrFail($id);
+        $transaksi->delete();
+        return redirect()->route('transaksi.index')
+            ->with('success', 'Data berhasil dihapus!');
+
     }
 }
