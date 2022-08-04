@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('customer.user');
 });
 
 Auth::routes();
@@ -35,5 +35,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
 });
 
 Route::get('/test', function () {
-    return view('layouts.user');
+    return view('customer.user');
+});
+
+Route::group(['prefix' => 'member', 'middleware' => ['auth', 'role:member']], function () {
+    Route::get('/', function () {
+        return view('customer.user');
+    });
+
 });

@@ -32,7 +32,9 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        return view('transaksi.create');
+        $barang = Barang::all();
+        $costumer = Costumer::all();
+        return view('transaksi.create',compact('barang','costumer'));
     }
 
     /**

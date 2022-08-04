@@ -51,6 +51,9 @@ class SupplierController extends Controller
         $supplier->jumlah = $request->jumlah;
         $supplier->id_barang = $request->id_barang;
         $supplier->save();
+          $barang = Barang::findOrFail($request->id_barang);
+          $barang->stok += $request->jumlah;
+          $barang->save();
         return redirect()->route('supplier.index')
             ->with('success', 'Data berhasil dibuat!');
 
