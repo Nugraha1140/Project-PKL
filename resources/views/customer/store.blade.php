@@ -42,12 +42,12 @@
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
-					</ul>
+                    <li><a href="#"><i class="fa fa-phone"></i> +62-878-774-652-93</a></li>
+                    <li><a href="#"><i class="fa fa-envelope-o"></i> Nugraha@gmail.com</a></li>
+                    <li><a href="#"><i class="fa fa-map-marker"></i> JL.babakan Sukatma</a></li>
+                </ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
+						
 						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
 					</ul>
 				</div>
@@ -64,7 +64,7 @@
 						<div class="col-md-3">
 							<div class="header-logo">
 								<a href="#" class="logo">
-									<img src="./img/logo.png" alt="">
+									<img src="{{asset('components/img/logo.png')}}" alt="">
 								</a>
 							</div>
 						</div>
@@ -110,7 +110,7 @@
 										<div class="cart-list">
 											<div class="product-widget">
 												<div class="product-img">
-													<img src="./img/product01.png" alt="">
+													<img src="{{asset('components/img/a.jpg')}}" alt="">
 												</div>
 												<div class="product-body">
 													<h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -121,7 +121,7 @@
 
 											<div class="product-widget">
 												<div class="product-img">
-													<img src="./img/product02.png" alt="">
+													<img src="{{asset('components/img/a.jpg')}}" alt="">
 												</div>
 												<div class="product-body">
 													<h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -358,7 +358,7 @@
 							<h3 class="aside-title">Top selling</h3>
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="./img/product01.png" alt="">
+									<img src="{{asset('components/img/a.jpg')}}" alt="">
 								</div>
 								<div class="product-body">
 									<p class="product-category">Category</p>
@@ -369,7 +369,7 @@
 
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="./img/product02.png" alt="">
+									<img src="{{asset('components/img/a.jpg')}}" alt="">
 								</div>
 								<div class="product-body">
 									<p class="product-category">Category</p>
@@ -380,7 +380,7 @@
 
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="./img/product03.png" alt="">
+									<img src="{{asset('components/img/a.jpg')}}" alt="">
 								</div>
 								<div class="product-body">
 									<p class="product-category">Category</p>
@@ -427,7 +427,7 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/product01.png" alt="">
+										<img src="{{asset('components/img/a.jpg')}}" alt="">
 										<div class="product-label">
 											<span class="sale">-30%</span>
 											<span class="new">NEW</span>
@@ -455,13 +455,13 @@
 									</div>
 								</div>
 							</div>
-							<!-- /product -->
+							<!-- /a->
 
 							<!-- product -->
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/product02.png" alt="">
+										<img src="{{asset('components/img/a.jpg')}}" alt="">
 										<div class="product-label">
 											<span class="new">NEW</span>
 										</div>
@@ -488,7 +488,7 @@
 									</div>
 								</div>
 							</div>
-							<!-- /product -->
+							<!-- /a->
 
 							<div class="clearfix visible-sm visible-xs"></div>
 
@@ -496,7 +496,7 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/product03.png" alt="">
+										<img src="{{asset('components/img/a.jpg')}}" alt="">
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
@@ -515,7 +515,7 @@
 									</div>
 								</div>
 							</div>
-							<!-- /product -->
+							<!-- /a->
 
 							<div class="clearfix visible-lg visible-md"></div>
 
@@ -523,7 +523,7 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/product04.png" alt="">
+										<img src="{{asset('components/img/a.jpg')}}" alt="">
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
@@ -542,7 +542,7 @@
 									</div>
 								</div>
 							</div>
-							<!-- /product -->
+							<!-- /a->
 
 							<div class="clearfix visible-sm visible-xs"></div>
 
@@ -550,7 +550,7 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/product05.png" alt="">
+										<img src="{{asset('components/img/a.jpg')}}" alt="">
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
@@ -569,13 +569,13 @@
 									</div>
 								</div>
 							</div>
-							<!-- /product -->
+							<!-- /a->
 
 							<!-- product -->
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/product06.png" alt="">
+										<img src="{{asset('components/img/a.jpg')}}" alt="">
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
@@ -599,7 +599,7 @@
 									</div>
 								</div>
 							</div>
-							<!-- /product -->
+							<!-- /a->
 
 							<div class="clearfix visible-lg visible-md visible-sm visible-xs"></div>
 
@@ -607,7 +607,7 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/product07.png" alt="">
+										<img src="{{asset('components/img/a.jpg')}}" alt="">
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
@@ -631,13 +631,13 @@
 									</div>
 								</div>
 							</div>
-							<!-- /product -->
+							<!-- /a->
 
 							<!-- product -->
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/product08.png" alt="">
+										<img src="{{asset('components/img/a.jpg')}}" alt="">
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
@@ -656,7 +656,7 @@
 									</div>
 								</div>
 							</div>
-							<!-- /product -->
+							<!-- /a->
 
 							<div class="clearfix visible-sm visible-xs"></div>
 
@@ -664,7 +664,7 @@
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/product09.png" alt="">
+										<img src="{{asset('components/img/a.jpg')}}" alt="">
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
@@ -683,7 +683,7 @@
 									</div>
 								</div>
 							</div>
-							<!-- /product -->
+							<!-- /a->
 						</div>
 						<!-- /store products -->
 
