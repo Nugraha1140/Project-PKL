@@ -49,33 +49,35 @@
                     <li><a href="#"><i class="fa fa-map-marker"></i> JL.babakan Sukatma</a></li>
                 </ul>
                 <ul class="header-links pull-right">
-                     <li class="header-item">
+                <li class="header-item">
+                     @if (Route::has('login'))
+                     @auth
+                       <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a> 
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Login</a>
              <a class="btn btn-outline-secondary" href="{{ route('login') }}"
                  onclick="event.preventDefault();
-                                                     document.getElementById('login-form').submit();">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
-  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-</svg> {{ __('login') }}
+                 document.getElementById('login-form').submit();">
              </a>
-
              <form id="login-form" action="{{ route('login') }}" method="POST" class="d-none">
                  @csrf
              </form>
-         </li>
-          <li class="header-item">
-             <a class="btn btn-outline-secondary" href="{{ route('register') }}"
+                </li>
+             @if (Route::has('register'))
+             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+             @endif
+             <li class="header-item">
+                 <a class="btn btn-outline-secondary" href="{{ route('register') }}"
                  onclick="event.preventDefault();
-                                                     document.getElementById('register-form').submit();">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
-  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-</svg> {{ __('register') }}
+                 document.getElementById('register-form').submit();">
              </a>
-
+             
              <form id="register-form" action="{{ route('register') }}" method="POST" class="d-none">
-                 @csrf
-             </form>
+                @csrf
+            </form>
+        </li>
+        @endif
+             @endauth
                     <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
                 </ul>
             </div>
@@ -92,7 +94,7 @@
                     <div class="col-md-3">
                         <div class="header-logo">
                             <a href="#" class="logo">
-                                <img src="{{ asset('componentsa.jpg') }}" alt="">
+                                <img src="{{ asset('componentsz.jpg') }}" alt="">
                             </a>
                         </div>
                     </div>

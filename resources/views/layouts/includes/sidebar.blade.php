@@ -513,7 +513,7 @@
                            <i class="nav-icon far fa-circle text-info"></i>
                            <p>Informational</p> --}}
                        </a>
-                   </li> --}}
+                   </li> 
                </ul>
            </nav>
            <!-- /.sidebar-menu -->
