@@ -3,6 +3,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\CostumerController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\BajuController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,12 +36,31 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
 });
 
 Route::get('/test', function () {
-    return view('customer.store');
+    return view('customer.cart');
 });
 
-Route::group(['prefix' => 'member', 'middleware' => ['auth', 'role:member']], function () {
-    Route::get('/', function () {
-        return view('customer.user');
-    });
 
-});
+ Route::resource('barang', BajuController::class);
+    Route::resource('product', BajuController::class);
+    Route::resource('store', BajuController::class);
+    Route::resource('checkout', BajuController::class);
+    Route::resource('cart', BajuController::class);
+
+
+
+
+
+
+
+// Route::group(['prefix' => 'member', 'middleware' => ['auth', 'role:member']], function () {
+//     Route::get('/product', function () {
+//         return view('customer.product');
+//     });
+//     Route::get('/store', function () {
+//         return view('customer.store');
+//     });
+//     Route::get('/checkout', function () {
+//         return view('customer.checkout');
+//     });
+
+// });

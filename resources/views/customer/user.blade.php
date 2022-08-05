@@ -46,11 +46,9 @@
                 <ul class="header-links pull-left">
                     <li><a href="#"><i class="fa fa-phone"></i> +62-878-774-652-93</a></li>
                     <li><a href="#"><i class="fa fa-envelope-o"></i> Nugraha@gmail.com</a></li>
-                    <li><a href="#"><i class="fa fa-map-marker"></i> JL.babakan Sukatma</a></li>
+                    <li><a href="#"><i class="fa fa-map-marker"></i> JL.Babakan Sukatma</a></li>
                 </ul>
-                <ul class="header-links pull-right">
-                    <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-                </ul>
+                
             </div>
         </div>
         <!-- /TOP HEADER -->
@@ -457,49 +455,7 @@
     <!-- /SECTION -->
 
     <!-- HOT DEAL SECTION -->
-    <div id="hot-deal" class="section">
-        <!-- container -->
-        <div class="container">
-            <!-- row -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="hot-deal">
-                        <ul class="hot-deal-countdown">
-                            <li>
-                                <div>
-                                    <h3>02</h3>
-                                    <span>Days</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <h3>10</h3>
-                                    <span>Hours</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <h3>34</h3>
-                                    <span>Mins</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <h3>60</h3>
-                                    <span>Secs</span>
-                                </div>
-                            </li>
-                        </ul>
-                        <h2 class="text-uppercase">hot deal this week</h2>
-                        <p>New Collection Up to 50% OFF</p>
-                        <a class="primary-btn cta-btn" href="#">Shop now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- /row -->
-        </div>
-        <!-- /container -->
-    </div>
+   
     <!-- /HOT DEAL SECTION -->
 
     <!-- SECTION -->
