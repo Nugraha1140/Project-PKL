@@ -47,7 +47,18 @@
                 <li class="header-item">
                      @if (Route::has('login'))
                      @auth
-                       <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a> 
+                       <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline"></a> 
+                       <li class="nav-item">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                                                document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+           
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Login</a>
              <a class="btn btn-outline-secondary" href="{{ route('login') }}"
@@ -199,10 +210,11 @@
             <div id="responsive-nav">
                 <!-- NAV -->
                 <ul class="main-nav nav navbar-nav">
-                    <li class="active"><a href="/customer/user">Home</a></li>
-                    <li><a href="#">Hot Deals</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Product</a></li>
+                    <li><a href="/home">Home</a></li>
+                <li><a href="/store">Product</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/product">Detail</a></li>
+                <li><a href="/checkout">Shop</a></li>
 
                 </ul>
                 <!-- /NAV -->

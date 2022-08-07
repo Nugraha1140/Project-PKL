@@ -2,40 +2,37 @@
 
 namespace App\Http\Controllers;
 use App\Models\Barang;
-use Illuminate\Http\Request;
+use App\Models\Costumer;
 
 class BajuController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    // public function index()
+    // {
+    //     $barang = Barang::all();
+    //     return view('customer.index', compact('barang'));
+    // }
+
+    public function store()
     {
         $barang = Barang::all();
-        return view('barang.index', compact('barang'));
+        return view('store', compact('barang' ));
     }
     public function product()
     {
-        return view('customer.product', compact('product'));
-
+        $barang = Barang::all();
+        return view('product',compact('barang'));
     }
-    public function store()
+
+    public function cart(Barang $barang)
     {
-        
-        return view('customer.store', compact('store'));
+        $barang = Barang::all();
+        return view('cart', compact('barang'));
     }
     public function checkout()
     {
-        return view('customer.checkout', compact('checkout'));
-
+        $costumer = Costumer::all();
+        return view('checkout', compact('costumer'));
     }
-    public function cart()
-    {
-        return view('customer.cart', compact('cart'));
-
-    }
-
-   
 }
+   
+
