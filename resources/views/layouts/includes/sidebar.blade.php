@@ -1,4 +1,10 @@
-   <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <style>
+    aside{
+        background-color: #D10024;
+    }
+  </style>
+  
+  <aside class="main-sidebar">
        <!-- Brand Logo -->
        {{-- <a href="index3.html" class="brand-link">
            <img src="{{ asset('assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
@@ -41,7 +47,7 @@
                    <li class="nav-item">
                        <a href="/home" class="nav-link">
                            <i class="nav-icon fas fa-tachometer-alt"></i>
-                           <p>
+                           <p  class="text-sm text-gray-700 dark:text-gray-500 underline">
                                Dashboard
                            </p>
                        </a>

@@ -31,6 +31,7 @@
                         />
 
                         <title>Login Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+                        
 
                         <meta name="description" content="" />
 

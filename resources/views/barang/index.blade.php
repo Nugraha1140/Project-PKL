@@ -22,6 +22,7 @@
                                         <th>Harga</th>
                                         <th>Stok</th>
                                         <th>Foto</th>
+                                        <th>Deskripsi</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -37,6 +38,7 @@
                                                 <img src="{{ $data->image() }}" style="width: 100px; height:100px;"
                                                     alt="">
                                             </td>
+                                            <td>{{ $data->deskripsi }}</td>
                                             <td>
                                                 <form action="{{ route('barang.destroy', $data->id) }}" method="post">
                                                     @csrf

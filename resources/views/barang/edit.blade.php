@@ -61,6 +61,16 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
+                                <label class="form-label">Deskripsi</label>
+                                <textarea name="deskripsi"  class="form-control  @error('nama_baju') is-invalid @enderror" value="{{ $barang->deskripsi }}"></textarea>
+                                   {{ $barang->desripsi }}
+                                @error('desripsi')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
                                 <div class="d-grid gap-2">
                                     <button class="btn btn-primary" type="submit">Save</button>
                                 </div>

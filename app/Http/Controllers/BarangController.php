@@ -11,7 +11,15 @@ class BarangController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
+    public function index2()
+    {
+        $barang = Barang::all();
+        return view('customer.product', compact('barang'));
+
+    }
+
     public function index()
     {
         $barang = Barang::all();
@@ -43,11 +51,13 @@ class BarangController extends Controller
             'harga' => 'required',
             'stok' => 'required',
             'foto' => 'required',
+            'deskripsi' => 'required',
         ]);
         $barang = new Barang();
         $barang->nama_baju = $request->nama_baju;
         $barang->harga = $request->harga;
         $barang->stok = $request->stok;
+        $barang->deskripsi = $request->deskripsi;
         if ($request->hasFile('foto')) {
             $image = $request->file('foto');
             $name = rand(1000, 9999) . $image->getClientOriginalName();
@@ -105,6 +115,7 @@ class BarangController extends Controller
         $barang->nama_baju = $request->nama_baju;
         $barang->harga = $request->harga;
         $barang->stok = $request->stok;
+        $barang->deskripsi = $request->deskripsi;
         if ($request->hasFile('foto')) {
             $image = $request->file('foto');
             $name = rand(1000, 9999) . $image->getClientOriginalName();

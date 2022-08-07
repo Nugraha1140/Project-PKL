@@ -15,12 +15,12 @@ class BajuController extends Controller
     public function store()
     {
         $barang = Barang::all();
-        return view('store', compact('barang' ));
+        return view('customer.store', compact('barang' ));
     }
     public function product()
     {
         $barang = Barang::all();
-        return view('product',compact('barang'));
+        return view('customer.product',compact('barang'));
     }
 
     public function cart(Barang $barang)

@@ -48,22 +48,22 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
 });
 
 Route::get('/test', function () {
-    return view('customer.store');
+    return view('customer.product');
 });
 
-Route::group(['prefix' => 'member', 'middleware' => ['auth', 'role:member|admin']],
-    function () {
-        Route::get('/', function () {
-            return 'home';
-        });
-    });
+// Route::group(['prefix' => 'member', 'middleware' => ['auth', 'role:member|admin']],
+//     function () {
+//         Route::get('/', function () {
+//             return 'home';
+//         });
+//     });
 
 // front Route
-Route::group(['prefix' => '/'], function () {
+// Route::group(['prefix' => '/'], function () {
     
-    Route::get('cart/{barang}', [BajuController::class, 'cart']);
-    Route::get('store/{barang}', [BajuController::class, 'store']);
+    Route::get('cart/{barang}', [BarangController::class, 'cart']);
+    Route::get('/test', [BarangController::class, 'index2']);
     Route::get('product/{barang}', [BajuController::class, 'product']);
     Route::get('checkout/{barang}', [BajuController::class, 'costumer']);
 
-});
+// });

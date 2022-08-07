@@ -34,6 +34,11 @@
                             @endif
                         </div>
                         <div class="mb-3">
+                            <label class="form-label">Deskripsi</label>
+                            <input type="textarea" class="form-control " name="deskripsi"
+                                value="{{ $barang->deskripsi }}" readonly>
+                        </div>
+                        <div class="mb-3">
                             <div class="d-grid gap-2">
                                 <a href="{{ route('barang.index') }}" class="btn btn-primary" type="submit">Kembali</a>
                             </div>
