@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Barang;
+use App\Models\Costumer;
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use Str;
 
@@ -18,13 +20,24 @@ class BarangController extends Controller
      * @return \Illuminate\Http\Response
      * 
      */
-    public function cart()
+    public function cart( $barang, Request $request)
     {
-        $barang = Barang::all();
-        return view('customer.cart', compact('barang'));
+        $barang = Barang::where('slug',$barang)->first();
+        $jumlah = $request->jumlah;
+        return view('customer.cart', compact('barang','jumlah'));
 
     }
 
+    public function checkout($barang, Request $request)
+    {
+        $barang = Barang::where('slug',$barang)->first();
+        $jumlah = $request->jumlah;
+        $costumer = Costumer::all();
+        $transaksi = Transaksi::all();
+        return view('customer.checkout', compact('costumer','barang','jumlah','transaksi'));
+
+    }
+    
     public function storee()
     {
         $barang = Barang::all();

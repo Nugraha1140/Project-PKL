@@ -31,9 +31,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
     });
     Route::resource('barang', BarangController::class);
     Route::resource('supplier', SupplierController::class);
-    Route::resource('costumer', CostumerController::class);
     Route::resource('transaksi', TransaksiController::class);
 });
+Route::resource('costumer', CostumerController::class);
 
 // Route::get('/cart', [App\Http\Controllers\BarangController::class, 'cart']);
 // Route::get('/store', [BarangController::class, 'storee']);
@@ -43,10 +43,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
 
 Route::group(['prefix' => '/'], function () {
     Route::get('/store', [BarangController::class, 'storee']);
-    Route::get('product/{barang}', [BarangController::class, 'product']);
-    Route::get('cart', [BarangController::class, 'cart']);
-    Route::get('checkout', [TransaksiController::class, 'checkout']);
-    Route::get('status', [TransaksiController::class, 'status']);
+    Route::get('/product/{barang}', [BarangController::class, 'product'])->name('barang');
+    Route::get('/cart/{barang}', [BarangController::class, 'cart'])->name('barang');
+    Route::get('/checkout/{barang}', [BarangController::class, 'checkout'])->name('costumer');
+    Route::get('/status', [CostumerController::class, 'status']);
 
 });
 Route::get('/test', function () {

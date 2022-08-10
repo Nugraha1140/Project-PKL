@@ -14,8 +14,10 @@
 				<div class="col-lg-8 col-md-12">
 					<div class="cart-table-wrap">
 						<div class="container">
-						<table border="2" class="cart-table">
-							<thead class="cart-table-head">
+							<form action="{{url('checkout',$barang->slug)}}" method="get">
+
+								<table border="2" class="cart-table">
+									<thead class="cart-table-head">
 								<tr class="table-head-row">
 									<th class="product-remove"></th>
 									<th class="product-image">Product Image</th>
@@ -25,15 +27,20 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr class="table-body-row" enctype=>
+								<tr class="table-body-row">
 									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
 									<td class="product-image"><img src="{{$barang->image()}}" style="width:30%" alt=""></td>
 									<td class="product-name">{{$barang->nama_baju}}</td>
 									<td class="product-price">Rp.{{number_format($barang->harga,0,'.','.')}}</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-									<td class="product-total">{{$barang->jumlah}}</td>
+									<td class="product-quantity"><input type="number" name="jumlah" value="{{$jumlah}}" placeholder="0"></td>
 								</tr>
-							</tbody>
+								<tr>
+									<td><button class="add-to-cart-btn" type="submit"><i class="fa fa-shopping-cart"></i> add to
+									cart</button></td>
+								</tr>
+									
+								</tbody>
+							</form>
 						</table>
 					</div>
 				</div>

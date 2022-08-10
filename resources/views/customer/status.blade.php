@@ -1,58 +1,17 @@
 @extends('layouts.user')
 @section('content')
 
-
-
-
-
-
- <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Transaksi') }}</div>
-
-                    <div class="card-body">
-                        @if (session('transaksi'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('transaksi') }}
-                            </div>
-                        @endif
-
-                        {{ __('Thank You') }}
-                    </div>
-                </div>
+ <div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <span class="icon-check_circle display-3 text-success"></span>
+                <h2 class="display-3 text-black">Thank you!</h2>
+                <p class="lead mb-5">You order was successfuly completed.</p>
+                <p><a href="/store" class="primary-btn order-submit">Back to store</a>
+                </p>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
 @endsection

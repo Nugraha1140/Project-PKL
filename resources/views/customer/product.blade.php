@@ -57,9 +57,9 @@
                     <p>{{ $barang->deskripsi }}</p>
 
 
-                    <form action="{{('checkout') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{url('cart',$barang->slug) }}" method="GET">
 
-                        <div class="product-options">
+                        {{-- <div class="product-options">
                             <label>
                                 Size
                                 <select class="input-select" name="ukuran">
@@ -76,7 +76,7 @@
                                     <option value="Red">Red</option>
                                 </select>
                             </label>
-                        </div>
+                        </div> --}}
 
                         <div class="add-to-cart">
                             <div class="qty-label">

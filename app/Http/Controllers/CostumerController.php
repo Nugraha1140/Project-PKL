@@ -18,7 +18,12 @@ class CostumerController extends Controller
         return view('costumer.index', compact('costumer'));
 
     }
+public function status()
+    {
+       
+        return view('customer.status');
 
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -51,8 +56,8 @@ class CostumerController extends Controller
         $costumer->no_telpon = $request->no_telpon;
         $costumer->alamat = $request->alamat;
         $costumer->save();
-        return redirect()->route('costumer.index')
-            ->with('success', 'Data berhasil dibuat!');
+        return redirect()->route('customer.status')
+        ->with('success', 'Data berhasil dibuat!');
     }
 
     /**
