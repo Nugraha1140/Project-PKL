@@ -4,18 +4,35 @@ namespace App\Http\Controllers;
 
 use App\Models\Barang;
 use Illuminate\Http\Request;
+use Str;
 
 class BarangController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      * 
      */
-    public function index2()
+    public function cart()
     {
         $barang = Barang::all();
+        return view('customer.cart', compact('barang'));
+
+    }
+
+    public function storee()
+    {
+        $barang = Barang::all();
+        return view('customer.store', compact('barang'));
+
+    }
+    public function product(Barang $barang)
+    {
         return view('customer.product', compact('barang'));
 
     }
@@ -55,6 +72,7 @@ class BarangController extends Controller
         ]);
         $barang = new Barang();
         $barang->nama_baju = $request->nama_baju;
+        $barang->slug= Str::slug($request->nama_baju,'-');
         $barang->harga = $request->harga;
         $barang->stok = $request->stok;
         $barang->deskripsi = $request->deskripsi;
@@ -113,6 +131,7 @@ class BarangController extends Controller
         ]);
         $barang = Barang::findOrFail($id);
         $barang->nama_baju = $request->nama_baju;
+        $barang->slug= Str::slug($request->nama_baju,'-');
         $barang->harga = $request->harga;
         $barang->stok = $request->stok;
         $barang->deskripsi = $request->deskripsi;

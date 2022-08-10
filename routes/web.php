@@ -20,18 +20,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-// Route::get('/store', function () {
-//     return view('customer.store');
-// });
-// Route::get('/cart', function () {
-//     return view('customer.cart');
-// });
-// Route::get('/product', function () {
-//     return view('customer.product');
-// });
-// Route::get('/checkout', function () {
-//     return view('customer.checkout');
-// });
 
 Auth::routes();
 
@@ -47,23 +35,20 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
     Route::resource('transaksi', TransaksiController::class);
 });
 
-Route::get('/test', function () {
-    return view('customer.product');
+// Route::get('/cart', [App\Http\Controllers\BarangController::class, 'cart']);
+// Route::get('/store', [BarangController::class, 'storee']);
+// Route::get('/product/{barang}', [BarangController::class, 'product']);
+// Route::get('/checkout', [TransaksiController::class, 'checkout']);
+
+
+Route::group(['prefix' => '/'], function () {
+    Route::get('/store', [BarangController::class, 'storee']);
+    Route::get('product/{barang}', [BarangController::class, 'product']);
+    Route::get('cart', [BarangController::class, 'cart']);
+    Route::get('checkout', [TransaksiController::class, 'checkout']);
+    Route::get('status', [TransaksiController::class, 'status']);
+
 });
-
-// Route::group(['prefix' => 'member', 'middleware' => ['auth', 'role:member|admin']],
-//     function () {
-//         Route::get('/', function () {
-//             return 'home';
-//         });
-//     });
-
-// front Route
-// Route::group(['prefix' => '/'], function () {
-    
-    Route::get('cart/{barang}', [BarangController::class, 'cart']);
-    Route::get('/test', [BarangController::class, 'index2']);
-    Route::get('product/{barang}', [BajuController::class, 'product']);
-    Route::get('checkout/{barang}', [BajuController::class, 'costumer']);
-
-// });
+Route::get('/test', function () {
+    return view('customer.status');
+});

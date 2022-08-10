@@ -7,7 +7,19 @@
                 <li><a href="#"><i class="fa fa-envelope-o"></i> Nugraha@gmail.com</a></li>
                 <li><a href="#"><i class="fa fa-map-marker"></i> JL.Babakan Sukatma</a></li>
             </ul>
-            
+             <ul class="header-links pull-right">
+                 <li class="nav-item">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                                                document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+           
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+             </ul>
         </div>
     </div>
     <!-- /TOP HEADER -->
@@ -131,7 +143,6 @@
                 <li><a href="/home">Home</a></li>
                 <li><a href="/store">Product</a></li>
                 <li><a href="/cart">Cart</a></li>
-                <li><a href="/product">Detail</a></li>
                 <li><a href="/checkout">Shop</a></li>
 
             </ul>

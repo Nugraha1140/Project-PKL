@@ -24,6 +24,11 @@ class TransaksiController extends Controller
         $transaksi = Transaksi::with('costumer','barang')->get();
         return view('transaksi.index', ['transaksi' => $transaksi]);
     }
+    public function checkout()
+    {
+        $transaksi = Transaksi::with('costumer','barang')->get();
+        return view('customer.checkout', ['transaksi' => $transaksi]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -51,7 +56,6 @@ class TransaksiController extends Controller
             'id_barang' => 'required',
             'harga' => 'required',
             'jumlah' => 'required',
-            'total' => 'required',
             'tgl_transaksi' => 'required',
         ]);
 

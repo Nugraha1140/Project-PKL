@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Barang extends Model
 {
     use HasFactory;
-    public $fillable = ['nama_baju', 'harga', 'stok', 'foto'];
+    public $fillable = ['nama_baju','slug', 'harga', 'stok', 'foto','deskripsi'];
     public $timestamp = true;
 
     public function supplier()
@@ -34,5 +34,8 @@ class Barang extends Model
             return unlink(public_path('images/barang' . $this->foto));
         }
 
+    }
+    public  function getRouteKeyName(){
+        return 'slug';
     }
 }

@@ -13,34 +13,39 @@
 							<div class="section-title">
 								<h3 class="title">Billing address</h3>
 							</div>
+							<form action="{{route('costumer.status')}}" method="post">
+
+								<div class="form-group">
+								<label class="form-label">Nama Lengkap</label>
+									<input class="input" type="text" name="nama_costumer" placeholder="Nama Lengkap">
+								</div>
+								<div class="form-group">
+								<label> Jenis Kelamin</label>
+								<br>
+								<br>
+								<input class="form-check-input" type="radio" name="jk" value="Laki-laki">
+							<label class="form-check-label">
+								Laki-laki
+							</label>
+							&nbsp;<input class="form-check-input" type="radio" name="jk" value="Perempuan">
+							<label class="form-check-label">
+								Perempuan
+							</label>
+							
+						</div>
+						
 							<div class="form-group">
-								<input class="input" type="text" name="first-name" placeholder="First Name">
+							<label class="form-label">Nomor Telpon</label>
+								<input class="input" type="text" name="no_telpon" placeholder="Nomor Telpon">
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="last-name" placeholder="Last Name">
-							</div>
-							<div class="form-group">
-								<input class="input" type="email" name="email" placeholder="Email">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="address" placeholder="Address">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="city" placeholder="City">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="country" placeholder="Country">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="zip-code" placeholder="ZIP Code">
-							</div>
-							<div class="form-group">
-								<input class="input" type="tel" name="tel" placeholder="Telephone">
+							<label class="form-label">Alamat</label>
+								<textarea name="alamat" placeholder="Alamat" id="" cols="65" rows="10"></textarea>
 							</div>
 							
 						</div>
 						<!-- /Billing Details -->
-
+						
 						<!-- Shiping Details -->
 						<div class="shiping-details">
 							<div class="section-title">
@@ -69,24 +74,22 @@
 							</div>
 							<div class="order-products">
 								<div class="order-col">
-									<div>1x Product Name Goes Here</div>
-									<div>$980.00</div>
-								</div>
-								<div class="order-col">
-									<div>2x Product Name Goes Here</div>
-									<div>$980.00</div>
+									@foreach ($transaksi as $data)
+									<div>{{ $data->barang->nama_baju }}</div>
+									<div>Rp. {{ number_format($data->barang->harga, 0, ',', '.') }}</div>
+									
 								</div>
 							</div>
 							<div class="order-col">
-								<div>Shiping</div>
-								<div><strong>FREE</strong></div>
+								<div>Jumlah</div>
+								<div><strong>{{$data->jumlah}}</strong></div>
 							</div>
 							<div class="order-col">
 								<div><strong>TOTAL</strong></div>
-								<div><strong class="order-total">$2940.00</strong></div>
+								<div><strong>Rp. {{ number_format($data->total, 0, ',', '.') }}</strong></div>
 							</div>
+							@endforeach
 						</div>
-					
 						<div class="input-checkbox">
 							<input type="checkbox" id="terms">
 							<label for="terms">
@@ -94,8 +97,9 @@
 								I've read and accept the <a href="#">terms & conditions</a>
 							</label>
 						</div>
-						<a href="#" class="primary-btn order-submit">Place order</a>
+						<button class="primary-btn order-submit" type="save">Order</button>
 					</div>
+				</form>
 					<!-- /Order Details -->
 				</div>
 				<!-- /row -->

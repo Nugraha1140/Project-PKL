@@ -1,9 +1,4 @@
-  <style>
-    aside{
-        background-color: #D10024;
-    }
-  </style>
-  
+ 
   <aside class="main-sidebar">
        <!-- Brand Logo -->
        {{-- <a href="index3.html" class="brand-link">

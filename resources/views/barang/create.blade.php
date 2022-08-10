@@ -53,7 +53,7 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Desripsi</label>
+                                <label class="form-label">Deskripsi</label>
                                 <textarea name="deskripsi"  class="form-control  @error('deskripsi') is-invalid @enderror" id="" cols="30" rows="10"></textarea>
                                 @error('deskripsi')
                                     <span class="invalid-feedback" role="alert">

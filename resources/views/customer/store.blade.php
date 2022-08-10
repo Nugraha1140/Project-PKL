@@ -14,7 +14,7 @@
 				<!-- row -->
 				<div class="row">
 					<!-- ASIDE -->
-					<div id="aside" class="col-md-3">
+					{{-- <div id="aside" class="col-md-3">
 						<!-- aside Widget -->
 						<div class="aside">
 							<h3 class="aside-title">Categories</h3>
@@ -190,13 +190,13 @@
 							</div>
 						</div>
 						<!-- /aside Widget -->
-					</div>
+					</div> --}}
 					<!-- /ASIDE -->
 
 					<!-- STORE -->
 					<div id="store" class="col-md-9">
 						<!-- store top filter -->
-						{{-- <div class="store-filter clearfix">
+						 {{-- <div class="store-filter clearfix">
 							<div class="store-sort">
 								<label>
 									Sort By:
@@ -218,21 +218,28 @@
 								<li class="active"><i class="fa fa-th"></i></li>
 								<li><a href="#"><i class="fa fa-th-list"></i></a></li>
 							</ul>
-						</div> --}}
+						</div>  --}}
 						<!-- /store top filter -->
 
 						<!-- store products -->
+						<div class="section-title">
+                        <h3 class="title">product</h3>
+                        <div class="section-nav">
+                            
+                        </div>
+                    </div>
 						<div class="row">
-							<!-- product -->
 							@foreach ($barang as $data)
-							<div class="col-md-4 col-xs-6">
+							<!-- product -->
+							<div class="col-md-4 col-xs-8">
 								<div class="product">
 									<div class="product-img">
-										<img src="{{$data->image()}}" alt="" style="widht:300px; height:300px ">
+										<a href="/product/{{$data->slug}}">
+											 <img src="{{$data->image()}}" style="width:263px; height:300px; " alt=""></a>
 									</div>
 									<div class="product-body">
-										<h3 class="product-name"><a href="#">{{$data->nama_baju}}</a></h3>
-										<h4 class="product-price">Rp.{{number_format($data->harga,0,'.','.')}}</h4>
+										<h3 class="product-name">{{$data->nama_baju}}</h3>
+										<h4 class="product-price">Rp. {{number_format($data->harga,0,'.','.')}}</h4>
 										<div class="product-btns">
 											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
 											<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
@@ -245,7 +252,8 @@
 								</div>
 							</div>
 							@endforeach
-							<!-- /a->
+						</div>
+							 <!-- /a->
 
 							 product -->
 							<!-- /a->
@@ -263,11 +271,14 @@
 						<!-- /store bottom filter -->
 					</div>
 					<!-- /STORE -->
-				</div>
 				<!-- /row -->
 			</div>
 			<!-- /container -->
-		
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
 		@endsection
 		<!-- /SECTION -->
 

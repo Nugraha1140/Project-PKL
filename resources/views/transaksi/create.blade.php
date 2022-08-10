@@ -14,44 +14,66 @@
                             @csrf
                             <div class="mb-3">
                                 <label class="form-label">Costumer</label>
-                                <input type="text" class="form-control  @error('nama_costumer') is-invalid @enderror"
-                                    name="nama_costumer">
-                                @error('nama_costumer')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <select name="id_customer" class="form-control @error('id_customer') is-invalid @enderror"
+                                    id="">
+                                    @foreach ($costumer as $data)
+                                        <option value="{{ $data->id }}">{{ $data->nama_costumer }}</option>
+                                    @endforeach
+                                </select>
                             </div>
+                            @error('id_customer')
+                            <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             <div class="mb-3">
-                                <label class="form-label">Nama Barang</label>
-                                <input type="text" class="form-control  @error('nama_baju') is-invalid @enderror"
-                                    name="nama_baju">
-                                @error('nama_baju')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <label class="form-label">Pilih Barang</label>
+                                <select name="id_barang" class="form-control @error('id_barang') is-invalid @enderror"
+                                    id="">
+                                    @foreach ($barang as $data)
+                                        <option value="{{ $data->id }}">{{ $data->nama_baju }}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label">Harga</label>
-                                <input type="text" class="form-control  @error('harga') is-invalid @enderror"
-                                    name="harga">
-                                @error('harga')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            @error('id_barang')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             <div class="mb-3">
                                 <label class="form-label">Jumlah</label>
                                 <input type="number" class="form-control  @error('jumlah') is-invalid @enderror"
                                     name="jumlah">
+                                </div>
                                 @error('jumlah')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            <div class="mb-3">
+                                <label class="form-label">Harga</label>
+                                <select name="harga" class="form-control @error('harga') is-invalid @enderror"
+                                    id="">
+                                    @foreach ($barang as $data)
+                                        <option value="{{ $data->id }}">{{ $data->harga }}</option>
+                                    @endforeach
+                                </select>
                             </div>
+                            @error('harga')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            <div class="mb-3">
+                                <label class="form-label">Tanggal</label>
+                                <input type="date" class="form-control @error('tgl_transaksi') is-invalid @enderror"
+                                    name="tgl_transaksi">
+                                </div>
+                                @error('tgl_transaksi')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <div class="d-grid gap-2">
